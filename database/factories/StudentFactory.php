@@ -63,7 +63,7 @@ class StudentFactory extends Factory
             $min = 1,
             $max = 5
         );
-        $igazolvanyszam = strtoupper($this->faker->bothify('??######'));
+        $igazolvanyszam = strtoupper($this->faker->unique()->bothify('??######'));
         $randomClass = Schoolclass::inRandomOrder()->first();
         $schoolclassId = $randomClass->Id;
         $grade = substr($randomClass->osztalyNev, 0, 1);
