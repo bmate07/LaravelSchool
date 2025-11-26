@@ -19,13 +19,19 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         //Mielőtt seedelünk, minden táblát töröljünk le.
-        DB::statement('DELETE FROM users');
-
-
+        DB::statement('DELETE FROM user');
+        DB::statement('DELETE FROM playingsport');
+        DB::statement('DELETE FROM student');
+        DB::statement('DELETE FROM schoolclass');
+        DB::statement('DELETE FROM sport');
 
         //Ami Seeder osztály itt fel van sorolva, annak lefut a run() metódusa
         $this->call([
             UserSeeder::class,
+            SchoolclassSeeder::class,
+            SportSeeder::class,
+            StudentSeeder::class,
+            PlayingsportSeeder::class,
         ]);
     }
 }
